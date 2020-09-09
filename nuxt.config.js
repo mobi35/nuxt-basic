@@ -47,12 +47,22 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/proxy',
   ],
+  proxy:{
+    '/api': {
+      target:'https://jobs.github.com',
+      pathRewrite: {
+        '^/api' : '/'
+      }
+    }
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

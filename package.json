@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/proxy": "^2.0.1",
     "axios": "^0.20.0",
     "nuxt": "^2.14.0"
   },

@@ -1,6 +1,11 @@
 <template>
   <div>
-
+    <v-container>
+      <h1> About Job Postings App </h1>
+<p>
+  This app will allow us to show
+</p>
+    </v-container>
     <h1>About Burat</h1>
     <p>titi</p>
   </div>
@@ -16,7 +21,7 @@ return {
       name:'description',
       content:'Best kantutanss'}
   ]
-}
+    }
   }
 }
 </script>
