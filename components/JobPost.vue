@@ -1,17 +1,17 @@
 <template>
 <div>
-  <h2>{{job.title}}</h2>
-  <img style="height:200px" :src="job.company_logo" />
-  <p>
-    Views: {{views}}
-  </p>
+  <img :src="job.company_logo" alt="">
+  <h1>
+    {{job.title}}
+  </h1>
+  <p>Views : {{views}}</p>
 </div>
 </template>
 
 <script>
 export default {
- name:'JobPostTitle',
- props: {
+  name:'JobPost',
+  props: {
    job:{
      type: Object,
      required: true,
@@ -21,9 +21,6 @@ export default {
      required: false,
      default: () => 0
    }
- },
- created(){
-
  }
 }
 </script>

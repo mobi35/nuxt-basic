@@ -3,7 +3,7 @@
     <div>
       <div v-for="job in alljobs" :key="job.id">
         <nuxt-link :to="'/jobs/'+ job.id ">
-          <JobPostTitle :job="job" v-if="job.company_logo !== null
+          <JobPostTitle :views="views('/jobs/'+ job.id )" :job="job" v-if="job.company_logo !== null
           && job.title !== null" />
         </nuxt-link>
       </div>
@@ -22,6 +22,7 @@
 <script>
 import JobPostTitle from '../components/JobPostTitle'
 import axios from 'axios'
+import { mapGetters } from 'vuex'
 export default {
   components:{
     JobPostTitle
@@ -39,6 +40,9 @@ return {
   ]
 }
   },
+  computed: mapGetters({
+    views: 'getViews'
+  }),
   async asyncData({params,error}){
     try {
       const {data} = await axios.get(
